@@ -41,7 +41,7 @@ resource "aws_default_subnet" "default_az1" {
 
 # create security group for the ec2 instance
 resource "aws_security_group" "ec2_security_group" {
-  name        = "ec2 security group"
+  name        = "ec2-security-group-${random_id.suffix.hex}"
   description = "allow access on ports 80 and 22"
   vpc_id      = aws_default_vpc.default_vpc.id
 
@@ -73,6 +73,9 @@ resource "aws_security_group" "ec2_security_group" {
   }
 }
 
+resource "random_id" "suffix" {
+  byte_length = 8
+}
 
 # use data source to get a registered amazon linux 2 ami
 data "aws_ami" "amazon_linux_2" {
