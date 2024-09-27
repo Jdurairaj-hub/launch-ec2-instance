@@ -9,10 +9,6 @@ cd ..
 # initialize terraform
 terraform init
 
-
-# # plan terraform
-terraform plan -out=tfplan -auto-approve
-
 # # apply terraform
 terraform apply -auto-approve
 
