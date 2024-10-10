@@ -65,3 +65,21 @@ terraform apply
 ```
 
 Type yes when prompted to confirm the creation of resources.
+
+### Step 6: Access the Instance
+
+Once the EC2 instance is up and running, you can SSH into it using your key pair:
+
+```bash
+ssh -i /path_to_key.pem ec2-user@instance_ip_address
+```
+
+### Cleaning Up
+
+To destroy the EC2 instance and other resources created by Terraform, run:
+
+```bash
+terraform destroy
+```
+
+Type yes when prompted to confirm the destruction of resources.
